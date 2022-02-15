@@ -1,0 +1,23 @@
+﻿@model RepositoryExample_15_02_22.Models.CategoriesModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3>Kategoriler</h3>
+    <dl>
+        <dt>@Html.DisplayNameFor(x => x.Categories.CategoryID)</dt>
+        <dd>@Html.DisplayFor(x => x.Categories.CategoryID)</dd>
+
+        <dt>@Html.DisplayNameFor(x => x.Categories.CategoryName)</dt>
+        <dd>@Html.DisplayFor(x => x.Categories.CategoryName)</dd>
+
+        <dt>@Html.DisplayNameFor(x => x.Categories.Description)</dt>
+        <dd>@Html.DisplayFor(x => x.Categories.Description)</dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Listeye Geri Dön", "Index",null,new {@class="btn btn-primary" })
+</p>

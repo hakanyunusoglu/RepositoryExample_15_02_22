@@ -1,0 +1,31 @@
+﻿@model RepositoryExample_15_02_22.Models.CategoriesModel
+
+@{
+    ViewBag.Title = "Choose";
+}
+<div class="container">
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="text-center">
+            <tr>
+                <th>@Html.DisplayNameFor(x => x.Categories.CategoryID)</th>
+                <th>@Html.DisplayNameFor(x => x.Categories.CategoryName)</th>
+                <th>@Html.DisplayNameFor(x => x.Categories.Description)</th>
+                <th colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var item in Model.cList)
+            {
+                <tr>
+                    <td>@item.CategoryID</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Description</td>
+                    <td class="text-center"><a class="btn btn-info text-white" href="/Category/Detail/@item.CategoryID">Detail</a></td>
+                    <td class="text-center"><a class="btn btn-warning" href="/Category/Update/@item.CategoryID">Update</a></td>
+                    <td class="text-center"><a class="btn btn-danger text-white" href="/Category/Delete/@item.CategoryID">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Category/Index" class="btn btn-warning float-right col-md-2">Listeye Geri Dön</a>
+</div>

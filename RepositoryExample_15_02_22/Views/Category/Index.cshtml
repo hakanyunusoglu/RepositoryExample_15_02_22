@@ -1,0 +1,43 @@
+﻿@model RepositoryExample_15_02_22.Models.CategoriesModel
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">     
+    <div>
+        <br />
+        <form method="post" action="/Category/Index" class="d-inline-flex">
+            <input type="search" name="name" placeholder="Arama..." class="form-control" />
+            <button class="btn btn-success" type="submit">Ara</button>
+        </form>
+        <br />
+        <hr />
+        <a href="/Category/Ekle" class="btn btn-info float-right col-md-2 text-white">EKLE</a>
+        <a href="/Category/Choose" class="btn btn-primary float-right col-md-2 text-white">Kategori Seç</a>
+    </div>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.Categories.CategoryID)</th>
+                    <th>@Html.DisplayNameFor(x => x.Categories.CategoryName)</th>
+                    <th>@Html.DisplayNameFor(x => x.Categories.Description)</th>
+                    <th colspan="3">Action</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model.cList)
+                {
+                <tr>
+                    <td>@item.CategoryID</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Description</td>
+                    <td class="text-center"><a class="btn btn-info text-white" href="/Category/Detail/@item.CategoryID">Detail</a></td>
+                    <td class="text-center"><a class="btn btn-warning" href="/Category/Update/@item.CategoryID">Update</a></td>
+                    <td class="text-center"><a class="btn btn-danger text-white" href="/Category/Delete/@item.CategoryID">Delete</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+</div>
+

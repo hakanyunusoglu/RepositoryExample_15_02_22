@@ -1,0 +1,29 @@
+﻿@model RepositoryExample_15_02_22.Models.ProductsModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div>
+    <h3>Ürünler</h3>
+    <dl>
+        <dt>@Html.DisplayNameFor(x => x.Products.ProductID)</dt>
+        <dd>@Html.DisplayFor(x => x.Products.ProductID)</dd>
+
+        <dt>@Html.DisplayNameFor(x => x.Products.ProductName)</dt>
+        <dd>@Html.DisplayFor(x => x.Products.ProductName)</dd>
+
+        <dt>@Html.DisplayNameFor(x => x.Products.UnitPrice)</dt>
+        <dd>@Html.DisplayFor(x => x.Products.UnitPrice)</dd>
+
+        <dt>@Html.DisplayNameFor(x => x.Products.QuantityPerUnit)</dt>
+        <dd>@Html.DisplayFor(x => x.Products.QuantityPerUnit)</dd>
+
+        <dt>@Html.DisplayNameFor(x => x.Products.Discontinued)</dt>
+        <dd>@Html.DisplayFor(x => x.Products.Discontinued)</dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Listeye Geri Dön", "Index", null, new { @class = "btn btn-primary" })
+</p>
